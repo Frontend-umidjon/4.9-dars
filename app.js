@@ -90,5 +90,78 @@
 }
 // Salary
 {
-    
+    class Salary {
+        constructor(to,amount,type, status) {
+            this.to = to;
+            this.amount = amount;
+            this.type = type;
+            this.date = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+            this.status = Boolean(status) ? "muvaffaqiyatli o'tqazildi" : "O'tkazish bekor qilindi";
+            
+        }
+         getInfo() {
+            return `${this.to} ga ${this.amount} ${this.type} miqdordagi pul ${this.date} da ${this.status}`
+        }
+
+
+    }
+
+    let salary1 = new Salary("jamol", "100", "USD", true);
+    console.log(salary1.getInfo());
 }
+// Organization
+{
+    class Organization {
+        constructor(name,founder, address,employeeCount ,roomCount) {
+            this.name = name;
+            this.founder = founder;
+            this.address = address;
+            this.employeeCount = employeeCount;
+            this.roomCount = roomCount;
+        }
+        getInfo() {
+            return `${this.name} organizatsiyasi ${this.founder} tashkilotchi ${this.address} manzilida joylashgan ${this.employeeCount} ishchisi bor va ${this.roomCount} xonasi bor`
+        }
+    }
+
+    let organization1 = new Organization("Najot Ta'lim", "Adhamjonov Temurbek", "Tashkent", "400", "150");
+    console.log(organization1.getInfo());
+}
+// Kurslar
+{
+    class Kurs {
+        constructor(name,teacher,payment, room, duration) {
+            this.name = name;
+            this.teacher = teacher;
+            this.payment = payment;
+            this.room = room;
+            this.duration = duration;
+        }
+       getFullInfo() {
+        return `${this.name} kursi ${this.teacher} o'qituvchi Narxi:${this.payment}  ${this.room} xonasi ${this.duration} oy davom etadi`
+       }
+    }
+
+    let kurs1 = new Kurs("React JS", "Boburmirzo Rosulov", "1_320_000 UZS", "SLACK", "8");
+    console.log(kurs1.getFullInfo());
+}
+// Room
+{
+    class Room {
+        constructor(name,tableCount,chairCount, projectorCount, whiteboardCount,boardCount,bigScreenCount) {
+            this.name = name;
+            this.tableCount = tableCount;
+            this.chairCount = chairCount;
+            this.projectorCount = projectorCount;
+            this.whiteboardCount = whiteboardCount;
+            this.boardCount = boardCount;
+            this.bigScreenCount = bigScreenCount;
+        }
+        getFullInfo() { 
+            return `${this.name} xonasi ${this.tableCount} ta stol, ${this.chairCount} ta stul, ${this.projectorCount} ta proyektor, ${this.whiteboardCount} ta doska, ${this.boardCount} ta proyektor uchun doska, ${this.bigScreenCount} ta katta ekran`
+        }
+    }
+
+    let room1 = new Room("A", "A", "A", "A", "A", "A", "A");
+    console.log(room1.getFullInfo());
+ }
